@@ -14,6 +14,8 @@ window.addEventListener('DOMContentLoaded', getAllPosts);
 // Options for fetch request
 createNew.addEventListener('click', addPost);
 
+// Show all posts
+createButton.addEventListener('click', getAllPosts)
 
 function pageContents(data){
     console.log(data);
@@ -33,10 +35,11 @@ function createMyElement(parent, typeOfElement, html){
 function addPost(event){
         event.preventDefault();
     
+        const title = inputValue.value || 'default title'
         const url = baseurl + 'posts';
         // Post content
         const body = {
-            title: inputValue.value,
+            title: title,
             author: 'Author1'
         };
         // Fetch options
@@ -55,7 +58,7 @@ function addPost(event){
         })
 }
 
-// Show all posts
+// Show all posts()
 function getAllPosts(event){
 
     const url = baseurl + 'posts';
