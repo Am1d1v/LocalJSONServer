@@ -18,7 +18,12 @@ createNew.addEventListener('click', addPost);
 createButton.addEventListener('click', getAllPosts)
 
 function pageContents(data){
-    console.log(data);
+    output.innerHTML = '';
+    const main = createMyElement(output, 'div', '');
+    
+    data.forEach((element, index) => {
+        console.log(element);
+    })
 }
 
 // Create DOM elements with DB data
@@ -67,4 +72,4 @@ function getAllPosts(event){
     .then(data => {
         pageContents(data);
     })
-}
+} 
