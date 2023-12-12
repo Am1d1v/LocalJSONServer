@@ -40,9 +40,53 @@ function pageContents(data){
         const inputTwo = createMyElement(main, 'input', '');
         inputTwo.value = element.author;
         inputTwo.classList.add('output-author');
+
+        // Inputs buttons for updating and deleting data
+        const btns = createMyElement(main, 'div', '');
+        btns.classList.add('btnsContainer')
+
+        // Update data button
+        const inputBtnUpdate = createMyElement(btns, 'button', 'Update');
+        inputBtnUpdate.addEventListener('click', (event) => {
+            const json = {
+                title: inputOne.value,
+                author: inputTwo.value
+            };
+
+            // Load new data
+            updateItem(json, element.id);
+        });
+
+        // Delete data button
+        const inputBtnDelete = createMyElement(btns, 'button', 'Delete');
+        inputBtnDelete.addEventListener('click', () => {
+            
+        });
+        
+
     })
+}
 
+// Update Item
+function updateItem(json, id){
+  
+    const url = baseurl + 'posts/' + id ;
 
+    // Fetch options
+    const options = {
+        method: 'PUT',
+        body: JSON.stringify(json),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    };
+    
+    // Fetch data
+    fetch(url, options)
+    .then(res => res.json())
+    .then(data => {
+        pageContents(data);
+    })
 }
 
 // Create DOM elements with DB data
