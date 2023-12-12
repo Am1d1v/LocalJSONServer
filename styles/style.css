@@ -30,4 +30,9 @@ body {
 }
 .outputInner input {
   margin: 5px 0;
+}
+
+.output-element {
+  border-radius: 5px;
+  padding: 5px;
 }/*# sourceMappingURL=style.css.map */

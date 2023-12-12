@@ -27,7 +27,8 @@ function pageContents(data){
     data.forEach((element, index) => {
         console.log(element);
         const inputOne = createMyElement(main, 'input', '');
-        inputOne.value = element.title
+        inputOne.value = element.title;
+        inputOne.classList.add('output-element')
     })
 }
 
