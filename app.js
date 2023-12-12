@@ -60,7 +60,11 @@ function pageContents(data){
         // Delete data button
         const inputBtnDelete = createMyElement(btns, 'button', 'Delete');
         inputBtnDelete.addEventListener('click', () => {
-            
+            const url = baseurl + 'posts/' + element.id ;
+            fetch(url, {
+                method: 'DELETE'
+            })
+            main.remove();
         });
         
 

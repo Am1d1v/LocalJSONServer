@@ -1,12 +1,7 @@
 {
   "posts": [
     {
-      "title": "Title1",
-      "author": "Author 1",
-      "id": 1
-    },
-    {
-      "title": "default title",
+      "title": "Updated title",
       "author": "Author1",
       "id": 2
     },
@@ -26,13 +21,7 @@
       "id": 5
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   },
