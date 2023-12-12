@@ -21,15 +21,28 @@ createButton.classList.add('btn')
 // Show all post on page
 function pageContents(data){
     output.innerHTML = '';
-    const main = createMyElement(output, 'div', '');
-    main.classList.add('outputInner')
+
+    
     
     data.forEach((element, index) => {
         console.log(element);
+
+        // Inputs wrapper
+        const main = createMyElement(output, 'div', '');
+        main.classList.add('outputInner')
+
+        // Create title informantion
         const inputOne = createMyElement(main, 'input', '');
         inputOne.value = element.title;
-        inputOne.classList.add('output-element')
+        inputOne.classList.add('output-title');
+
+        // Create author information
+        const inputTwo = createMyElement(main, 'input', '');
+        inputTwo.value = element.author;
+        inputTwo.classList.add('output-author');
     })
+
+
 }
 
 // Create DOM elements with DB data
