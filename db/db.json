@@ -11,12 +11,12 @@
       "author": "author2"
     },
     {
-      "title": "",
+      "title": "test",
       "author": "Author1",
       "id": 3
     },
     {
-      "title": "test",
+      "title": "default title",
       "author": "Author1",
       "id": 4
     },

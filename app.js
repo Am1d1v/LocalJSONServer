@@ -14,15 +14,20 @@ window.addEventListener('DOMContentLoaded', getAllPosts);
 // Options for fetch request
 createNew.addEventListener('click', addPost);
 
-// Show all posts
+// Show all posts in log
 createButton.addEventListener('click', getAllPosts)
+createButton.classList.add('btn')
 
+// Show all post on page
 function pageContents(data){
     output.innerHTML = '';
     const main = createMyElement(output, 'div', '');
+    main.classList.add('outputInner')
     
     data.forEach((element, index) => {
         console.log(element);
+        const inputOne = createMyElement(main, 'input', '');
+        inputOne.value = element.title
     })
 }
 
